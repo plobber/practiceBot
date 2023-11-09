@@ -2,15 +2,16 @@ package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMax.IdleMode;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Drivetrain extends SubsystemBase{
-    private CANSparkMax leftFront;
-    private CANSparkMax leftRear;
-    private CANSparkMax rightFront;
-    private CANSparkMax rightRear;
+    private CANSparkMax leftFront = new CANSparkMax(1, MotorType.kBrushless);
+    private CANSparkMax leftRear = new CANSparkMax(3, MotorType.kBrushless);
+    private CANSparkMax rightFront = new CANSparkMax(2, MotorType.kBrushless);
+    private CANSparkMax rightRear = new CANSparkMax(4, MotorType.kBrushless);
     private DifferentialDrive diffDrive;
     private double speed;
     private double rotation;
